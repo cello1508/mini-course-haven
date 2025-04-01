@@ -1,100 +1,85 @@
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Check, Play, Award, Clock } from "lucide-react";
+
+const lessons = [
+  {
+    id: 1,
+    title: "Introdução ao Mini Curso",
+    description: "Apresentação dos conceitos fundamentais e do que você vai aprender.",
+    videoUrl: "https://www.youtube.com/watch?v=VjVEuM4bMRY",
+    duration: "12:45"
+  },
+  {
+    id: 2,
+    title: "Instalando n8n",
+    description: "Aprenda a configurar a ferramenta n8n, essencial para nossos fluxos automatizados.",
+    videoUrl: "https://www.youtube.com/watch?v=lv8IdXVB5cY",
+    duration: "15:27"
+  },
+  {
+    id: 3,
+    title: "Fazendo o Agente de IA do zero",
+    description: "Construa seu próprio agente de inteligência artificial passo a passo.",
+    videoUrl: "https://www.youtube.com/watch?v=KmOSxER584c",
+    duration: "24:18"
+  },
+  {
+    id: 4,
+    title: "Colocando a IA no WhatsApp",
+    description: "Integre seu agente de IA ao WhatsApp para atendimento automatizado.",
+    videoUrl: "https://www.youtube.com/watch?v=f-Z8peU4_P8",
+    duration: "18:33"
+  },
+  {
+    id: 5,
+    title: "Finalização: Seu Inimigo Diário",
+    description: "Conclusão do mini curso e próximos passos para evoluir seus conhecimentos.",
+    videoUrl: "https://www.youtube.com/watch?v=_A4DA7Y0r7g",
+    duration: "10:51"
+  }
+];
 
 const MiniCourseSection = () => {
-  const courseModules = [
-    {
-      id: 1,
-      title: "Módulo 1: Fundamentos Essenciais",
-      description: "Aprenda os conceitos básicos necessários para começar sua jornada.",
-      duration: "45 minutos",
-      lessons: 5
-    },
-    {
-      id: 2,
-      title: "Módulo 2: Técnicas Intermediárias",
-      description: "Desenvolva habilidades práticas que farão diferença no seu dia a dia.",
-      duration: "60 minutos",
-      lessons: 4
-    },
-    {
-      id: 3,
-      title: "Módulo 3: Aplicação Prática",
-      description: "Coloque em prática tudo o que aprendeu com exercícios guiados.",
-      duration: "50 minutos",
-      lessons: 3
-    }
-  ];
-
-  const benefits = [
-    "Acesso imediato a todo o conteúdo do mini curso",
-    "Material complementar para download",
-    "Suporte por e-mail durante o período do curso",
-    "Certificado de conclusão digital",
-    "Desconto exclusivo no treinamento completo"
-  ];
-
   return (
-    <section id="minicourse" className="py-20 bg-purple-50">
+    <section id="minicourse" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">Mini Curso Gratuito</h2>
           <p className="section-subtitle">
-            Inicie sua jornada com nosso mini curso exclusivo e descubra por que nossos alunos estão transformando suas carreiras.
+            Acesse as aulas do nosso mini curso e comece a transformar seus resultados hoje mesmo.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">
-              O que você vai aprender
-            </h3>
-            <div className="space-y-6">
-              {courseModules.map((module) => (
-                <Card key={module.id} className="overflow-hidden border-l-4 border-l-purple-600">
-                  <CardContent className="p-6">
-                    <h4 className="font-bold text-lg mb-2">{module.title}</h4>
-                    <p className="text-gray-600 mb-4">{module.description}</p>
-                    <div className="flex items-center text-sm text-gray-500 space-x-4">
-                      <span className="flex items-center">
-                        <Clock className="h-4 w-4 mr-1 text-purple-600" />
-                        {module.duration}
-                      </span>
-                      <span className="flex items-center">
-                        <Play className="h-4 w-4 mr-1 text-purple-600" />
-                        {module.lessons} aulas
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-lg p-8 shadow-lg border border-purple-100">
-            <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-6 mx-auto">
-              <Award className="h-8 w-8 text-purple-700" />
-            </div>
-            <h3 className="text-2xl font-bold mb-6 text-center text-gray-900">
-              Benefícios do Mini Curso
-            </h3>
-            <ul className="space-y-4 mb-8">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start">
-                  <Check className="h-5 w-5 text-purple-700 mt-1 mr-3 flex-shrink-0" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-            <Button className="btn-primary w-full text-lg py-6">
-              Quero Participar Agora
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {lessons.map((lesson) => (
+            <Card key={lesson.id} className="sophisticated-card overflow-hidden transition-all duration-300 hover:transform hover:scale-105">
+              <CardHeader className="p-4 bg-muted">
+                <CardTitle className="text-xl">{lesson.title}</CardTitle>
+                <CardDescription className="text-gray-400">{lesson.duration}</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <p className="text-gray-400 mb-6">{lesson.description}</p>
+                <a href={lesson.videoUrl} target="_blank" rel="noopener noreferrer">
+                  <Button className="sophisticated-button w-full flex items-center justify-center">
+                    <Play className="mr-2 h-4 w-4" /> Assistir Aula
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-white mb-6">
+            Gostou do conteúdo e quer aprender mais? Nosso treinamento completo está em pré-venda com condições especiais!
+          </p>
+          <a href="#presale">
+            <Button className="sophisticated-button">
+              Saiba Mais Sobre o Treinamento
             </Button>
-            <p className="text-sm text-center mt-4 text-gray-500">
-              Vagas limitadas - Turma com início imediato
-            </p>
-          </div>
+          </a>
         </div>
       </div>
     </section>

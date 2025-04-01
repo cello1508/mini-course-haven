@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import CountdownTimer from "./CountdownTimer";
 import {
   CheckCircle,
   Clock,
@@ -64,6 +65,9 @@ const PreSaleSection = () => {
     }
   ];
 
+  // Set the end date to April 4th, 2024 at 23:59:59
+  const endDate = new Date(2024, 3, 4, 23, 59, 59);
+
   return (
     <section id="presale" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -72,6 +76,11 @@ const PreSaleSection = () => {
           <p className="section-subtitle">
             Prepare-se para o próximo nível com nosso treinamento completo. Oferta especial por tempo limitado!
           </p>
+          
+          {/* Countdown Timer */}
+          <div className="max-w-3xl mx-auto mt-8">
+            <CountdownTimer endDate={endDate} />
+          </div>
         </div>
 
         <div className="bg-gradient-to-r from-[#0a0a0a] to-[#181818] rounded-sm shadow-xl overflow-hidden mb-16 border border-[#333333]">

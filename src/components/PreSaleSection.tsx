@@ -15,29 +15,57 @@ import {
 const PreSaleSection = () => {
   const features = [
     {
-      icon: <BookOpen className="h-6 w-6 text-purple-700" />,
+      icon: <BookOpen className="h-6 w-6 text-white" />,
       title: "Material Completo",
       description: "Mais de 50 horas de conteúdo em vídeo, apostilas e exercícios práticos."
     },
     {
-      icon: <Users className="h-6 w-6 text-purple-700" />,
+      icon: <Users className="h-6 w-6 text-white" />,
       title: "Comunidade Exclusiva",
       description: "Acesso a um grupo privado para networking e troca de experiências."
     },
     {
-      icon: <MessageCircle className="h-6 w-6 text-purple-700" />,
+      icon: <MessageCircle className="h-6 w-6 text-white" />,
       title: "Mentorias em Grupo",
       description: "Sessões quinzenais com nossos especialistas para tirar dúvidas."
     },
     {
-      icon: <BarChart className="h-6 w-6 text-purple-700" />,
+      icon: <BarChart className="h-6 w-6 text-white" />,
       title: "Projetos Práticos",
       description: "Desenvolva projetos reais para aplicar seus conhecimentos."
     }
   ];
 
+  const bonuses = [
+    {
+      id: 1,
+      title: "Aula fechada de Posicionamento com Theo",
+      description: "Aprenda com quem já faturou milhões a se posicionar corretamente no mercado."
+    },
+    {
+      id: 2,
+      title: "Call com gestor de tráfego experiente",
+      description: "Sessão com profissional que já gerou milhões em vendas e está migrando para o mundo dos Agentes."
+    },
+    {
+      id: 3,
+      title: "Acesso à comunidade dos mentorados",
+      description: "Grupo exclusivo onde compartilhamos vagas e oportunidades (valor imensurável)."
+    },
+    {
+      id: 4,
+      title: "Imersão on-line de micro SaaS com IA",
+      description: "Para os 10 primeiros: aprenda a montar seu próprio SaaS utilizando Inteligência Artificial."
+    },
+    {
+      id: 5,
+      title: "67% de desconto",
+      description: "Economia substancial no investimento, com opção de parcelamento no cartão."
+    }
+  ];
+
   return (
-    <section id="presale" className="py-20">
+    <section id="presale" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">Pré-Venda: Treinamento Completo</h2>
@@ -46,14 +74,14 @@ const PreSaleSection = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-r from-purple-700 to-indigo-600 rounded-2xl shadow-xl overflow-hidden mb-16">
+        <div className="bg-gradient-to-r from-[#0a0a0a] to-[#181818] rounded-sm shadow-xl overflow-hidden mb-16 border border-[#333333]">
           <div className="p-8 md:p-12">
             <div className="flex flex-col md:flex-row">
               <div className="md:w-2/3 text-white mb-8 md:mb-0 md:pr-12">
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">
                   Transforme Sua Carreira com Nosso Treinamento Completo
                 </h3>
-                <p className="text-lg opacity-90 mb-6">
+                <p className="text-lg text-[#b0b0b0] mb-6">
                   Nosso programa abrangente foi desenvolvido para levar suas habilidades ao próximo nível. 
                   Com mais de 100 alunos formados e uma metodologia exclusiva, garantimos sua evolução.
                 </p>
@@ -92,17 +120,17 @@ const PreSaleSection = () => {
                 </div>
               </div>
               
-              <div className="md:w-1/3 bg-white rounded-xl p-6 flex flex-col">
+              <div className="md:w-1/3 bg-[#0a0a0a] rounded-sm p-6 flex flex-col border border-[#333333]">
                 <div className="mb-6 text-center">
-                  <span className="inline-block px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-2">Oferta de Pré-Venda</span>
-                  <div className="text-gray-900">
-                    <span className="text-sm line-through">R$ 1.997,00</span>
+                  <span className="inline-block px-3 py-1 bg-[#2a2a2a] text-white rounded-full text-sm font-medium mb-2">Oferta de Pré-Venda</span>
+                  <div className="text-white">
+                    <span className="text-sm line-through text-[#808080]">R$ 1.997,00</span>
                     <div className="text-3xl font-bold">R$ 997,00</div>
-                    <p className="text-gray-600 text-sm mt-1">ou 12x de R$ 97,00</p>
+                    <p className="text-[#b0b0b0] text-sm mt-1">ou 12x de R$ 97,00</p>
                   </div>
                   <div className="flex items-center justify-center mt-2 text-sm">
-                    <Gift className="h-4 w-4 text-purple-700 mr-1" />
-                    <span className="text-purple-700 font-medium">+ 3 bônus exclusivos</span>
+                    <Gift className="h-4 w-4 text-white mr-1" />
+                    <span className="text-white font-medium">+ 5 bônus exclusivos</span>
                   </div>
                 </div>
                 
@@ -110,12 +138,12 @@ const PreSaleSection = () => {
                   Garantir Vaga na Pré-Venda
                 </Button>
                 
-                <p className="text-xs text-center text-gray-500 mb-4">
+                <p className="text-xs text-center text-[#808080] mb-4">
                   Oferta válida até 10/08 ou até acabarem as vagas
                 </p>
                 
-                <div className="flex items-center justify-center text-sm text-gray-600">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                <div className="flex items-center justify-center text-sm text-[#b0b0b0]">
+                  <CheckCircle className="h-4 w-4 text-white mr-2" />
                   <span>Pagamento 100% seguro</span>
                 </div>
               </div>
@@ -123,13 +151,36 @@ const PreSaleSection = () => {
           </div>
         </div>
         
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-white">
+            <Gift className="inline-block mr-2 mb-1" /> Bônus Especiais da Pré-Venda
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {bonuses.map((bonus) => (
+              <Card key={bonus.id} className="sophisticated-card border-t-2 border-t-white">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    <div className="mr-4 bg-[#2a2a2a] rounded-full p-2 text-white">
+                      <Gift className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold mb-2 text-white">BÔNUS {bonus.id}: {bonus.title}</h4>
+                      <p className="text-[#b0b0b0]">{bonus.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="border-t-4 border-t-purple-600">
+            <Card key={index} className="border-t-2 border-t-white sophisticated-card">
               <CardContent className="pt-6">
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                <p className="text-[#b0b0b0]">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

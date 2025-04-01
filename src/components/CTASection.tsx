@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-hero-pattern text-white">
+    <section className="py-20 bg-[#0a0a0a] text-white">
       <div className="container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto bg-card p-8 md:p-12 border border-border rounded-sm">
+        <div className="max-w-4xl mx-auto bg-[#181818] p-8 md:p-12 border border-[#333333] rounded-sm">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Pronto para Transformar Seus Resultados?
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-[#b0b0b0] max-w-3xl mx-auto mb-10">
             Não perca a oportunidade de participar do nosso mini curso gratuito e garantir sua vaga no treinamento completo com condições especiais.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -25,8 +25,8 @@ const CTASection = () => {
               </Button>
             </a>
           </div>
-          <p className="mt-8 text-sm text-gray-500">
-            <span className="text-destructive">Oferta por tempo limitado:</span> Vagas limitadas. Não garantimos que esta oferta estará disponível novamente.
+          <p className="mt-8 text-sm text-[#808080]">
+            <span className="text-[#ff5757]">Oferta por tempo limitado:</span> Vagas limitadas. Não garantimos que esta oferta estará disponível novamente.
           </p>
         </div>
       </div>
